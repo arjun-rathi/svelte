@@ -1,17 +1,15 @@
 ---
 framework: mocha
-postMerge:
-  pattern:
-    - "test/test.ts"
-  strategy:
-    threshold: <5|100s|30m|6h>
-    type: <commit|time>
+preRun:
+     command:
+        - npm i
 preMerge:
   pattern:
     - "test/test.ts"
-preRun:
-  - npm i
+postMerge:
+  pattern:
+    - "test/test.ts"
 postRun:
-  - node --version
-  - node --version
-version: 2.0
+     command:
+        - node --version
+version: 1.0
